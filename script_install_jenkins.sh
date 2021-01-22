@@ -7,7 +7,10 @@ ubuntu_style() {
 	sudo apt update
 	sudo apt install jenkins default-jre
 	path=`type -p java`
+	cp /etc/bash.bashrc .
+	echo "PATH=${path}:$PATH" >> bash.bashrc
 	sudo echo "PATH=${path}:$PATH" >> /etc/bash.bashrc
+	sudo mv bash.bashrc /etc/bash.bashrc
 }
 
 centos_style() {
