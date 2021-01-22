@@ -8,12 +8,6 @@ ubuntu_style() {
 	echo "cloning devstack"
 	sudo -u stack git clone https://opendev.org/openstack/devstack /opt/stack/devstack
 	cd /opt/stack/devstack
-	echo `pwd`
-#	sudo -u stack echo "[[local|localrc]]
-#ADMIN_PASSWORD=admin
-#DATABASE_PASSWORD=$ADMIN_PASSWORD
-#RABBIT_PASSWORD=$ADMIN_PASSWORD
-#SERVICE_PASSWORD=$ADMIN_PASSWORD" > /opt/stack/devstack/local.conf
 	sudo -u stack /opt/stack/devstack/stack.sh
 	
 }
@@ -35,6 +29,7 @@ IPADDR=192.168.2.203" > /etc/sysconfig/network-scripts/ifcfg-eth0
 	yum -y install centos-release-openstack-queens
 	yum -y install openstack-packstack
 	packstack --allinone --os-heat-install=y
+	reboot
 }
 
 
