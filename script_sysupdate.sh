@@ -3,7 +3,6 @@
 ubuntu_style() {
 	echo "ubuntu style"
 	sudo apt update
-	sudo apt upgrade
 }
 
 centos_style() {
